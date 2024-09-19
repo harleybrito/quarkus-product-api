@@ -22,6 +22,11 @@ public class ProductService {
         return products;
     }
 
+    public ProductDTO findById(Long id) {
+        ProductEntity productEntity = this.productRepository.findById(id);
+        return this.entityToDTO(productEntity);
+    }
+
     public void createNewProduct(ProductDTO productDTO) {
         this.productRepository.persist(this.DTOToEntity(productDTO));
     }

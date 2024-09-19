@@ -28,6 +28,12 @@ public class ProductController {
         return this.productService.getAllProducts();
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public ProductDTO findProductById(@PathParam("id") Long id) {
+        return this.productService.findById(id);
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Transactional
