@@ -30,6 +30,7 @@ public class ProductController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
     public ProductDTO findProductById(@PathParam("id") Long id) {
         return this.productService.findById(id);
     }
